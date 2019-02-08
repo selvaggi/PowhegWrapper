@@ -68,6 +68,8 @@ cd ..
 make -j 12
 make install 
 
+export PATH=${PYTHIA8_DIR}/bin:${PATH}
+
 cd examples
 
 # compile HepMC example in Py8 to check that everything was installed properly
