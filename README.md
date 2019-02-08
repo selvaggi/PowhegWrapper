@@ -3,7 +3,7 @@
 
 Install all needed packages (LHAPDF, HEPMC, PYTHIA8, DELPHES and POWHEG_V2) at once (to be done only once):
 ```
-source install.sh
+./install.sh
 ```
 
 []() Run instructions
