@@ -143,6 +143,7 @@ echo "export PYTHIA8_DIR='${PYTHIA8_DIR}'" >> init.sh
 echo "export PYTHIA8='${PYTHIA8_DIR}'" >> init.sh
 echo "export POWHEG_DIR='${POWHEG_DIR}'" >> init.sh
 echo "export DELPHES_DIR='${DELPHES_DIR}'" >> init.sh
+echo "export PHOTOS_DIR='${PHOTOS_DIR}'" >> init.sh
 
 echo "export PATH=\$LHAPDF_DIR/bin:\$PATH" >> init.sh
 echo "export LD_LIBRARY_PATH=\$LHAPDF_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
