@@ -75,6 +75,25 @@ cd examples
 # compile HepMC example in Py8 to check that everything was installed properly
 make main41
 
+#Install Fastjet
+#----------------
+
+
+wget http://fastjet.fr/repo/fastjet-3.3.2.tar.gz
+tar xzvf fastjet-3.3.2.tar.gz
+cd fastjet-3.3.2
+
+mkdir install
+cd install
+FASTJET_DIR=$(pwd)
+cd ..
+./configure --prefix=${FASTJET_DIR} --enable-allplugins
+make -j 12
+make install 
+
+export PATH=${FASTJET_DIR}/bin:${PATH}
+cd ${HOME_DIR}
+
 
 #Install Delphes
 #-----------------
@@ -141,6 +160,7 @@ echo "export HEPMC_DIR='${HEPMC_DIR}'" >> init.sh
 echo "export LHAPDF_DIR='${LHAPDF_DIR}'" >> init.sh
 echo "export PYTHIA8_DIR='${PYTHIA8_DIR}'" >> init.sh
 echo "export PYTHIA8='${PYTHIA8_DIR}'" >> init.sh
+echo "export FASTJET_DIR='${FASTJET_DIR}'" >> init.sh
 echo "export POWHEG_DIR='${POWHEG_DIR}'" >> init.sh
 echo "export DELPHES_DIR='${DELPHES_DIR}'" >> init.sh
 echo "export PHOTOS_DIR='${PHOTOS_DIR}'" >> init.sh
@@ -151,6 +171,10 @@ echo "export PYTHONPATH=\$LHAPDF_DIR/lib/python2.7/site-packages:\$PYTHONPATH" >
 
 echo "export PATH=\$PYTHIA8_DIR/bin:\$PATH" >> init.sh
 echo "export LD_LIBRARY_PATH=\$PYTHIA8_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
+
+echo "export PATH=\$FASTJET_DIR/bin:\$PATH" >> init.sh
+echo "export LD_LIBRARY_PATH=\$FASTJET_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
+
 echo "export PYTHIA8DATA=\$PYTHIA8_DIR/share/Pythia8/xmldoc" >> init.sh
 echo "export LD_LIBRARY_PATH=\$PHOTOS_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
 
@@ -162,5 +186,5 @@ source init.sh
 
 # Clean un-necessary tarballs
 cd ${HOME_DIR}
-rm HepMC-2.06.08.tar.gz pythia8235.tgz LHAPDF-6.2.1.tar.gz Delphes-3.4.1.tar.gz
+rm HepMC-2.06.08.tar.gz pythia8235.tgz LHAPDF-6.2.1.tar.gz Delphes-3.4.1.tar.gz fastjet*.tar.gz
 
