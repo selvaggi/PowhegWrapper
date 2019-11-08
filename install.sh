@@ -1,9 +1,11 @@
 source	/cvmfs/sft.cern.ch/lcg/releases/LCG_88/gcc/6.2.0/x86_64-slc6/gcc-env.sh
 source	/cvmfs/sft.cern.ch/lcg/releases/LCG_88/Python/2.7.13/x86_64-slc6-gcc62-opt/Python-env.sh
 source	/cvmfs/sft.cern.ch/lcg/releases/LCG_88/ROOT/6.08.06/x86_64-slc6-gcc62-opt/ROOT-env.sh
+source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/scipy/0.18.1/x86_64-slc6-gcc62-opt/scipy-env.sh
 
 HOME_DIR=$(pwd)
-PROCESS=W_ew-BMNNP
+#PROCESS=ggHH
+#PROCESS=W_ew-BMNNP
 
 #Install LHAPDF6
 #----------------
@@ -155,6 +157,7 @@ cd ${HOME_DIR}
 echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/gcc/6.2.0/x86_64-slc6/gcc-env.sh		     " >> init.sh
 echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/Python/2.7.13/x86_64-slc6-gcc62-opt/Python-env.sh" >> init.sh
 echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/ROOT/6.08.06/x86_64-slc6-gcc62-opt/ROOT-env.sh   " >> init.sh
+echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/scipy/0.18.1/x86_64-slc6-gcc62-opt/scipy-env.sh  " >> init.sh
 
 echo "export HEPMC_DIR='${HEPMC_DIR}'" >> init.sh
 echo "export LHAPDF_DIR='${LHAPDF_DIR}'" >> init.sh
