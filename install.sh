@@ -154,10 +154,7 @@ cd ${HOME_DIR}
 #----------------------------
 # Now that main software needed has been installed it is convenient to create some script that automatically loads the necessary environment (something like "init.sh"), that contains the relevant env variables:
 
-echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/gcc/6.2.0/x86_64-slc6/gcc-env.sh		     " >> init.sh
-echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/Python/2.7.13/x86_64-slc6-gcc62-opt/Python-env.sh" >> init.sh
-echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/ROOT/6.08.06/x86_64-slc6-gcc62-opt/ROOT-env.sh   " >> init.sh
-echo "source /cvmfs/sft.cern.ch/lcg/releases/LCG_88/scipy/0.18.1/x86_64-slc6-gcc62-opt/scipy-env.sh  " >> init.sh
+echo "source /cvmfs/sft.cern.ch/lcg/views/LCG_88/x86_64-slc6-gcc62-opt/setup.sh  " >> init.sh
 
 echo "export HEPMC_DIR='${HEPMC_DIR}'" >> init.sh
 echo "export LHAPDF_DIR='${LHAPDF_DIR}'" >> init.sh
@@ -180,6 +177,8 @@ echo "export LD_LIBRARY_PATH=\$FASTJET_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
 
 echo "export PYTHIA8DATA=\$PYTHIA8_DIR/share/Pythia8/xmldoc" >> init.sh
 echo "export LD_LIBRARY_PATH=\$PHOTOS_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
+
+echo "export LD_LIBRARY_PATH=\$HEPMC_DIR/lib:\$LD_LIBRARY_PATH" >> init.sh
 
 
 # move init script to home and run it
